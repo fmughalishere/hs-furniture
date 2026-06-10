@@ -19,7 +19,7 @@ export default function CartPage() {
           <div className="text-center py-20 bg-slate-50 rounded-[50px]">
             <ShoppingBag size={60} className="mx-auto mb-6 text-slate-200" />
             <p className="text-xl text-slate-500 font-medium">Your bag is empty.</p>
-            <Link href="/shop" className="inline-block mt-8 bg-black text-white px-10 py-4 rounded-2xl font-bold uppercase tracking-widest text-xs">Start Shopping</Link>
+            <Link href="/products" className="inline-block mt-8 bg-black text-white px-10 py-4 rounded-2xl font-bold uppercase tracking-widest text-xs">Start Shopping</Link>
           </div>
         ) : (
           <div className="grid lg:grid-cols-3 gap-16">
