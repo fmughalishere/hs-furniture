@@ -88,6 +88,7 @@ export default function Navbar() {
         { name: 'BLOG', href: '/blog' },
         { name: 'TESTIMONIALS', href: '/testimonials' },
         { name: 'CONTACT', href: '/contact' },
+        { name: 'LOGIN', href: '/login'}
     ];
 
     return (
