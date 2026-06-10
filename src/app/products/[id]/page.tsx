@@ -43,32 +43,46 @@ export default function ProductDetails() {
             <AnimatePresence>
                 {showPopup && (
                     <motion.div
-                        initial={{ opacity: 0, y: -40, x: "-50%" }}
+                        initial={{ opacity: 0, y: -30, x: "-50%" }}
                         animate={{ opacity: 1, y: 0, x: "-50%" }}
                         exit={{ opacity: 0, y: -20, x: "-50%" }}
-                        className="fixed top-8 left-1/2 z-50 w-[90%] max-w-md bg-white border border-zinc-100 shadow-xl rounded-2xl p-4 flex items-center justify-between gap-4"
+                        transition={{ duration: 0.3 }}
+                        className="fixed top-28 left-1/2 -translate-x-1/2 z-[9999] w-[95%] sm:w-[90%] max-w-md bg-white border border-zinc-200 shadow-2xl rounded-2xl p-4 flex items-center justify-between gap-4"
                     >
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3 min-w-0">
                             <div className="text-emerald-600 bg-emerald-50 p-2 rounded-xl flex-shrink-0">
                                 <CheckCircle2 size={18} />
                             </div>
-                            <div>
-                                <p className="text-xs font-semibold text-zinc-900 tracking-tight">Masterpiece Added</p>
-                                <p className="text-[11px] text-zinc-400 font-light line-clamp-1">{product.name} is now in your bag.</p>
+
+                            <div className="min-w-0">
+                                <p className="text-xs font-semibold text-zinc-900">
+                                    Masterpiece Added
+                                </p>
+
+                                <p className="text-[11px] text-zinc-500 truncate">
+                                    {product.name} is now in your bag.
+                                </p>
                             </div>
                         </div>
-                        <div className="flex items-center gap-3 pl-2">
-                            <Link href="/cart" className="text-[10px] font-bold uppercase tracking-wider text-zinc-900 hover:opacity-70 whitespace-nowrap">
+
+                        <div className="flex items-center gap-3 flex-shrink-0">
+                            <Link
+                                href="/cart"
+                                className="text-[10px] font-bold uppercase tracking-wider text-zinc-900 hover:opacity-70"
+                            >
                                 View Bag
                             </Link>
-                            <button onClick={() => setShowPopup(false)} className="text-zinc-300 hover:text-zinc-500 transition-colors">
+
+                            <button
+                                onClick={() => setShowPopup(false)}
+                                className="text-zinc-400 hover:text-zinc-700"
+                            >
                                 <X size={14} />
                             </button>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
-
             <div className="pt-48 pb-24 px-6 md:px-16 max-w-7xl mx-auto">
                 <Link href="/products" className="inline-flex items-center gap-2 text-zinc-400 text-xs font-medium tracking-widest uppercase mb-10 hover:text-black transition-colors duration-300">
                     <ChevronLeft size={16} /> Back to Collection
