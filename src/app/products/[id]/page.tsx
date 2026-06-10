@@ -43,9 +43,9 @@ export default function ProductDetails() {
             <AnimatePresence>
                 {showPopup && (
                     <motion.div
-                        initial={{ opacity: 0, y: -30, x: "-50%" }}
-                        animate={{ opacity: 1, y: 0, x: "-50%" }}
-                        exit={{ opacity: 0, y: -20, x: "-50%" }}
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.3 }}
                         className="fixed top-28 left-1/2 -translate-x-1/2 z-[9999] w-[95%] sm:w-[90%] max-w-md bg-white border border-zinc-200 shadow-2xl rounded-2xl p-4 flex items-center justify-between gap-4"
                     >
